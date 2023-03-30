@@ -1,0 +1,13 @@
+//Configuración global
+@import './globals/settings';
+@import './globals/globals';
+
+// Importación de componentes
+@import './components/navbar';
+@import './components/task';
+@import './components/componentTaskList';
+@import './components/componentTask';
+@import './components/newTaskModel';
+
+
+

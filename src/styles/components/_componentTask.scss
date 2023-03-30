@@ -1,0 +1,14 @@
+.componentTask{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2a2e2f;
+    margin-bottom: 1rem;
+    border-radius: 15px;
+    padding: 0.5rem;
+    h4{
+        span{
+            display: block;
+        }
+    }
+}
