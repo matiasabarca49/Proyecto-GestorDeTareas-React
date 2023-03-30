@@ -1,4 +1,4 @@
-import { LEVELS } from "./levels.enum";
+// import { LEVELS } from "./levels.enum";
 
 export class Task {
     id = "";
@@ -6,7 +6,6 @@ export class Task {
     description= "";
     date= "";
     completed = false;
-    level = LEVELS.NORMAL
     
     constructor(name,description,completed , level){
         this.id = Date.now();

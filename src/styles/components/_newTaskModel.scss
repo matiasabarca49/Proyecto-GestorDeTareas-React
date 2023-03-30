@@ -6,11 +6,19 @@
     height: 100vh;
     background-image: linear-gradient(rgba(5, 7, 12,0.90),rgba(5, 7, 12, 0.90));
     .newTaskModelCont__form{
-        
+        position: relative;
+        margin: 100px auto;
         width: 400px;
         background-color: #383838;
         padding: 1rem;
         border-radius: 15px;
+        .btnClose{
+            position: absolute;
+            right: 0;
+        }
+        &__info{
+            margin: 4rem 0;
+        }
     
     }
 }

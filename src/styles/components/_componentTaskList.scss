@@ -1,8 +1,16 @@
 .componentTaskListCont{
     position: relative;
+    &__taskList{
+        margin: 4rem 2rem;
+    }
     &__button{
         position: absolute;
         top: 0;
         right: 0;
+        background-color: transparent;
+        border: none;
+        img{
+            width: 50px;
+        }
     }
 }

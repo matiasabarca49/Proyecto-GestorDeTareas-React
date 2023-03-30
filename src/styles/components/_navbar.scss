@@ -1,10 +1,33 @@
 .navbar{
-    background-color: #383838;
+    background-color: #25282a;
     width: 250px;
     padding: 1rem;
     &__Links{
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        a.active{
+            background-color: #414649;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            &:hover{
+                background-color: #414649;
+                color: #fff;
+            }
+        }
+        .pending{
+            background-color: transparent;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem;
+            &:hover{
+                // s
+                background-color: #181a1b;
+                color: #3391ff;
+                padding: 0.5rem;
+                border-radius: 10px;
+            }
+        }
     }
 }

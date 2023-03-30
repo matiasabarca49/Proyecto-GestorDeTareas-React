@@ -2,9 +2,28 @@ import { Task } from "../models/task.class"
 import { LEVELS } from "../models/levels.enum"
 
 
+const task1 ={
+    id: Date.now(), 
+    name: 'Crear y subir repositorio ', 
+    description: 'Crear el repositorio de la app "Gestor de tarea"',
+    date: "27/03/2023, 16:05:34",
+    completed: true,
+    level: LEVELS.URGENT
+}
+
+const task2 ={
+    id: Date.now() + 1, 
+    name: 'Actualizar repositorio constantemente ', 
+    description: 'Crear commit y subirlos todas las semanas',
+    date: "27/03/2023, 17:30:23",
+    completed: false,
+    level: LEVELS.NORMAL
+}
+
 const baseDeDatos= [
-    new Task('Crear y subir repositorio ', 'Crear el repositorio de la app "Gestor de tarea"',false, LEVELS.URGENT),
-    new Task('Actualizar repositorio ', 'Subir ultimos cambios ',false, LEVELS.NORMAL),
+    task1,
+    task2,
+    new Task('Revisar errores Frecuentes', 'Subir ultimos cambios ',false, LEVELS.BLOCKING),
 ]
 
 

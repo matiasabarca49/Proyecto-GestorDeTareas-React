@@ -5,8 +5,16 @@
     background-color: #2a2e2f;
     margin-bottom: 1rem;
     border-radius: 15px;
-    padding: 0.5rem;
+    padding: 0.5rem 2.5rem;
+    .taskName{
+        width: 250px;
+        font-size: $titleTaskSize;
+    }
+    .taskLevel{
+        width: 150px;
+    }
     h4{
+        font-weight: 400;
         span{
             display: block;
         }

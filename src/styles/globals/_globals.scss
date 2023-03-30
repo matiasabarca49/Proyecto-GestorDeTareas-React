@@ -1,5 +1,6 @@
 .appContainer{
     display: flex;
+    height: 100vh;
 }
 
 .contentContainer{
@@ -11,6 +12,16 @@
 .btn{
     padding: 0.5rem;
     border-radius: 10px;
-    background-color: #fff;
+    border: none;
     text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover{
+        transform: scale(110%);
+    }
+}
+
+.btnPrimary{
+    background-color: #181a1b;
+    color: #3391ff;
 }

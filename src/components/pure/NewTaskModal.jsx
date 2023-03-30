@@ -20,25 +20,27 @@ const NewTaskModal = ( {setTasks, tasks, setAddTask } ) => {
 
   return (
     <div className='newTaskModelCont'>
-        <button onClick={ () => setAddTask(false) }>Cerrar</button>
         <form className='newTaskModelCont__form' onSubmit={  (e) => e.preventDefault()  }>
-            <div>
-                <label htmlFor="taskName">Nombre de la tarea:</label>
-                <input type="text" id='taskName' onChange={ e => setName(e.target.value)} value={name}/>
+            <button onClick={ () => setAddTask(false) } className='btn btnClose'>Cerrar</button>
+            <div className='newTaskModelCont__form__info'>
+                <div>
+                    <label htmlFor="taskName">Nombre de la tarea:</label>
+                    <input type="text" id='taskName' onChange={ e => setName(e.target.value)} value={name}/>
+                </div>
+                <div>
+                    <label htmlFor="taskDescription"> Descripción: </label>
+                    <input type="text" id='taskDescription' onChange={ e => setDescription(e.target.value)} value={ description }/>
+                </div>
+                <div>
+                    <label htmlFor="levelTask"> Nivel de la Tarea:</label>
+                    <select name="" id=" levelTask" onChange={ (e) => setLevel(e.target.value)}>
+                        <option value={LEVELS.NORMAL}>Normal</option>
+                        <option value={LEVELS.URGENT} >Urgente</option>
+                        <option value={LEVELS.BLOCKING}>Bloqueante</option>
+                    </select>
+                </div>
             </div>
-            <div>
-                <label htmlFor="taskDescription"> Descripción: </label>
-                <input type="text" id='taskDescription' onChange={ e => setDescription(e.target.value)} value={ description }/>
-            </div>
-            <div>
-                <label htmlFor="levelTask"> Nivel de la Tarea:</label>
-                <select name="" id=" levelTask" onChange={ (e) => setLevel(e.target.value)}>
-                    <option value={LEVELS.NORMAL}>Normal</option>
-                    <option value={LEVELS.URGENT} >Urgente</option>
-                    <option value={LEVELS.BLOCKING}>Bloqueante</option>
-                </select>
-            </div>
-            <button onClick={ addNewTask }>Agregar</button>
+            <button onClick={ addNewTask } className='btn btnPrimary'>Agregar</button>
         </form>
     </div>
   )
