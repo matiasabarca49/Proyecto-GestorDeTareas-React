@@ -1,5 +1,5 @@
 export const LEVELS = {
-    NORMAL: 'Normal',
-    URGENT: 'Urgente',
-    BLOCKING: 'Bloqueante'
+    NORMAL: 'Baja',
+    URGENT: 'Medio',
+    BLOCKING: 'Alta'
 }

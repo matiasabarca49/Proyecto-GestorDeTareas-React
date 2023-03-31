@@ -1,0 +1,41 @@
+.taskDetail{
+    &__title{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        div{
+            h1{
+
+                margin: 0;
+                margin-top: 1rem ;
+            }
+            h4{
+                margin: 0;
+                margin-bottom: 1rem;
+                font-weight: 300
+            }
+        }
+        div:nth-child(2){
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    }
+    &__data{
+        display: flex;
+        justify-content: space-between;
+        background-color: #2a2e2f;
+        height: 200px;
+        margin-top: 1rem;
+        &__description{
+            width: 70%;
+            padding: 0 2rem;
+        }
+        &__date{
+            flex-grow: 1;
+            background-color: #25282a ;
+            text-align: center;
+            padding: 0 2rem;
+        }
+    }
+}

@@ -5,6 +5,7 @@ export class Task {
     name = "";
     description= "";
     date= "";
+    comentary= []
     completed = false;
     
     constructor(name,description,completed , level){

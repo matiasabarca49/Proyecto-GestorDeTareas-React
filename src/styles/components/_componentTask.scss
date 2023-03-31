@@ -7,11 +7,13 @@
     border-radius: 15px;
     padding: 0.5rem 2.5rem;
     .taskName{
-        width: 250px;
+        width: 28%;
         font-size: $titleTaskSize;
+        font-weight: 500;
     }
     .taskLevel{
-        width: 150px;
+        text-align: center;
+        width: 17%;
     }
     h4{
         font-weight: 400;

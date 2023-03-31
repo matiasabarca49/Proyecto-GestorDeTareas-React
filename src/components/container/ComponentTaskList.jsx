@@ -21,21 +21,26 @@ const ComponentTaskList = () => {
  
     return (
         <div className='componentTaskListCont'>
-            <div>
+            <div className='componentTaskListCont__title'>
                 <h1>Tus tareas son: </h1>
+                <button className='btn componentTaskListCont__button' onClick={ () => setAddTask(!addTask) }><img src='./img/addIcon.png' alt='agregar'/></button>
+                {addTask && <NewTaskModal setTasks={  setTasks } tasks={ tasks} setAddTask={ setAddTask } />}
             </div>
             <div className='componentTaskListCont__taskList'>
+                <div className='componentTaskListCont__encabezado'>
+                    <h2>Tarea</h2>
+                    <h3>Prioridad</h3>
+                    <h4>Creación</h4>
+                    <h4>Estado</h4>
+                    <h4>Link</h4>
+                </div>
                 {carga
-                    ?tasks.map( (tarea,index) => (
-                        <ComponentTask key={index} task={tarea} />
-                    ))
-                    : <h2>Cargando....</h2>
-                }
+                    ?tasks.map( tarea  => (
+                        <ComponentTask key={tarea.id} task={tarea} />
+                        ))
+                        : <h2>Cargando....</h2>
+                    }
             </div>
-            
-            <button className='btn componentTaskListCont__button' onClick={ () => setAddTask(!addTask) }><img src='./img/addIcon.png' /></button>
-            {addTask && <NewTaskModal setTasks={  setTasks } tasks={ tasks} setAddTask={ setAddTask } />}
-
         </div>
   )
 }
