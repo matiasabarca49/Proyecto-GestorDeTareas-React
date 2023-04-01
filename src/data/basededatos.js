@@ -66,6 +66,11 @@ export const getTask = (ID) => {
         : reject("No se encontró el producto" )
     })
 } 
+export const deleteTask = (ID) => {
+    const tareaEncontrada = baseDeDatos.find( task => task.id === parseFloat(ID))
+    const index = baseDeDatos.indexOf(tareaEncontrada)
+    baseDeDatos.splice(index,1)
+} 
 
 export const addTaskToBase = (task) =>{
     baseDeDatos.push(task)

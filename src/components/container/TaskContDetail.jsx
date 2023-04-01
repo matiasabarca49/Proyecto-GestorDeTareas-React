@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import { getTask } from '../../data/basededatos'
-import TaskDetail from '../pure/TaskDetail'
+import TaskDetail from './TaskDetail'
 
 const TaskContDetail = () => {
 

@@ -1,24 +1,10 @@
 .taskDetail{
-    &__title{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        div{
-            h1{
-
-                margin: 0;
-                margin-top: 1rem ;
-            }
-            h4{
-                margin: 0;
-                margin-bottom: 1rem;
-                font-weight: 300
-            }
+    a{
+        &:hover{
+            transform: scale(110%);
         }
-        div:nth-child(2){
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        img{
+            width: 40px;
         }
     }
     &__data{
@@ -38,4 +24,5 @@
             padding: 0 2rem;
         }
     }
+
 }
