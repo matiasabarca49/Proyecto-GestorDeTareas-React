@@ -8,17 +8,19 @@ const task1 ={
     description: 'Crear el repositorio de la app "Gestor de tarea"',
     date: "27/03/2023, 16:05:34",
     completed: true,
-    comentary: [
+    notes: [
         {
-            comentaryText: "Probando Los comentarios",
-            dateComentary: new Date().toLocaleDateString(),
-            user: "Peter"
+            id: `task1-${Date.now()}`,
+            noteText: "Probando Los comentarios",
+            noteDate: new Date().toLocaleString(),
+            noteUser: "Peter"
 
         },
         {
-            comentaryText: "Comentario 2",
-            dateComentary: new Date().toLocaleDateString(),
-            user: "Peter"
+            id: `task1-${Date.now() + 1}`,
+            noteText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            noteDate: new Date().toLocaleString(),
+            noteUser: "Peter"
 
         }
     ],
@@ -31,17 +33,19 @@ const task2 ={
     description: 'Crear commit y subirlos todas las semanas',
     date: "27/03/2023, 17:30:23",
     completed: false,
-    comentary: [
+    notes: [
         {
-            comentaryText: "Probando Los comentarios",
-            dateComentary: "28/03/2023, 15:00:32",
-            user: "Juan"
+            id: `task2-${Date.now()}`,
+            noteText: "Probando Los comentarios",
+            noteDate: "28/03/2023, 15:00:32",
+            noteUser: "Juan"
 
         },
         {
-            comentaryText: "Comentario 2",
-            dateComentary: "29/03/2023, 10:43:02",
-            user: "Juan"
+            id: `task2-${Date.now() + 1}`,
+            noteText: "Comentario 2",
+            notaDate: "29/03/2023, 10:43:02",
+            noteUser: "Juan"
 
         }
     ],
@@ -51,7 +55,8 @@ const task2 ={
 const baseDeDatos= [
     task1,
     task2,
-    new Task('Revisar errores Frecuentes', 'Subir ultimos cambios ',false, LEVELS.BLOCKING),
+    new Task('Revisar errores Frecuentes', "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." ,false, LEVELS.BLOCKING),
+    
 ]
 
 

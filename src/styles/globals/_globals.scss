@@ -1,10 +1,11 @@
 .appContainer{
     display: flex;
-    height: 100vh;
+    // height: 100vh;
 }
 
 .contentContainer{
     padding: 4rem 2rem;
+    width: 80%;
     flex-grow: 1;
 
 }

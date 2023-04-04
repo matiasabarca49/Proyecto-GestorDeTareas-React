@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import TaskInfo from '../pure/TaskInfo'
 import TaskTitle from '../pure/TaskTitle'
-import TaskCommentary from '../pure/TaskCommentary'
+import TaskNotes from '../pure/TaskNotes'
 import { deleteTask } from '../../data/basededatos'
 
 const TaskDetail = ( { task }) => {
@@ -37,7 +37,7 @@ const TaskDetail = ( { task }) => {
 
                 <TaskInfo task={ task } />
 
-                <TaskCommentary task={task} />
+                <TaskNotes task={task} />
 
             </div>
         }
