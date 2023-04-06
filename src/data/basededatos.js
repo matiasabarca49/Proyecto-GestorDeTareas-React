@@ -44,7 +44,7 @@ const task2 ={
         {
             id: `task2-${Date.now() + 1}`,
             noteText: "Comentario 2",
-            notaDate: "29/03/2023, 10:43:02",
+            noteDate: "29/03/2023, 10:43:02",
             noteUser: "Juan"
 
         }
@@ -52,33 +52,53 @@ const task2 ={
     level: LEVELS.NORMAL
 }
 
-const baseDeDatos= [
+//==============================================================================================================
+//datos ======================================================================================================
+//==============================================================================================================
+
+const taskDataBase= [
     task1,
     task2,
     new Task('Revisar errores Frecuentes', "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." ,false, LEVELS.BLOCKING),
     
 ]
 
+const notesDataBase =[
+    {name : "Servidores", Notas: [ {text: "Preguntar tiempo de entrega servidores CDN nuevos"} ]},
+    {name : "Rack", Notas: [ {text: "El servidor CDN de streaming está fallando, prueba de reinicio no funcionó"}, {text: "Se sacó el disco 4, esperando que lleguen los nuevos"} ]},
+    {name : "Raul", Notas: [ {text: "La VLAN Para usar en la conexion TarCo es la 8972"}, {text: "Hay un error en la potencia del enlace, revisar en el proximo intento"} ]}
+]
 
-export const getBase = new Promise((resolve, reject) => {
-    baseDeDatos ? resolve(baseDeDatos) : reject("Error la base de datos se encuentra vacia")
+//==============================================================================================================
+//Metodos ======================================================================================================
+//==============================================================================================================
+
+// Metodos para sección TAREAS
+
+export const getTaskBase = new Promise((resolve, reject) => {
+    taskDataBase ? resolve(taskDataBase) : reject("Error la base de datos se encuentra vacia")
 })
 
 export const getTask = (ID) => {
     return new Promise((resolve, reject) => {
         ID
-        ? resolve(baseDeDatos.find( task => task.id === parseFloat(ID))) 
+        ? resolve(taskDataBase.find( task => task.id === parseFloat(ID))) 
         : reject("No se encontró el producto" )
     })
 } 
 export const deleteTask = (ID) => {
-    const tareaEncontrada = baseDeDatos.find( task => task.id === parseFloat(ID))
-    const index = baseDeDatos.indexOf(tareaEncontrada)
-    baseDeDatos.splice(index,1)
+    const tareaEncontrada = taskDataBase.find( task => task.id === parseFloat(ID))
+    const index = taskDataBase.indexOf(tareaEncontrada)
+    taskDataBase.splice(index,1)
 } 
 
 export const addTaskToBase = (task) =>{
-    baseDeDatos.push(task)
+    taskDataBase.push(task)
     console.log("Tarea agregada")
 }
 
+//Metodos para sección NOTAS
+
+export const getNotesBase = new Promise((resolve, reject) => {
+    notesDataBase ? resolve(notesDataBase) : reject("Error la base de datos se encuentra vacia")
+})

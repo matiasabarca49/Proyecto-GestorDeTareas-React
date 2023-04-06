@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getBase } from '../../data/basededatos';
+import { getTaskBase } from '../../data/basededatos';
 import ComponentTask from '../pure/ComponentTask'
 import NewTaskModal from '../pure/NewTaskModal';
 
@@ -12,7 +12,7 @@ const ComponentTaskList = () => {
     
     useEffect(() => {
       
-        getBase
+        getTaskBase
             .then( res => setTasks(res))
             .catch(error => console.log(error))
         setCarga(true)
