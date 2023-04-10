@@ -106,6 +106,13 @@ export const addThemeToBase = ( newTheme ) =>{
     notesDataBase.push( newTheme )
 }
 
+export const deleteThemeFromBase = (themeToDelete)=>{
+    console.log(themeToDelete)
+    const themeFound = notesDataBase.find( themes => themes.name === themeToDelete )
+    console.log(themeFound)
+    notesDataBase.splice(  notesDataBase.indexOf(themeFound), 1  )
+}
+
 export const addNoteToBase = ( theme, newNota) =>{
     const themeFound = notesDataBase.find(  nota => nota.name === theme )
     newNota.id = Date.now()

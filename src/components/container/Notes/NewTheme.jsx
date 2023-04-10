@@ -28,7 +28,7 @@ const NewTheme = ( {setAddNewTheme } ) => {
             <form action="" onSubmit={  (e )=> e.preventDefault()  } >
                 <button style={{color:"#fff"}} onClick={ () => setAddNewTheme(false) }>X</button>
                 <label htmlFor="">Nombre del tema</label>
-                <input type="text"  onChange={ (e) => setTheme(e.target.value) } value={ theme } />
+                <input type="text"  onChange={ (e) => setTheme(e.target.value) } value={ theme } required />
                 <button onClick={ ()=> setAddNote(!addNote) }>Agregar Nota</button>
                 {addNote && 
                     <div>

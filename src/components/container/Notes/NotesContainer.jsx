@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getNotesBase, deleteNoteFromBase } from '../../../data/basededatos';
+import { getNotesBase, deleteNoteFromBase, deleteThemeFromBase } from '../../../data/basededatos';
 import NewNote from './NewNote';
 import NewTheme from './NewTheme';
 
@@ -33,7 +33,12 @@ const NotesContainer = () => {
               <div key={index} className=' NotesContainer__title'>
                 <div className='NotesContainer__theme'>
                   <h4>{contNota.name}</h4>
-                  <button >X</button>
+                  <button onClick={
+                    ()=>{
+                      deleteThemeFromBase(contNota.name)
+                      setRenderNotes(!renderNotes)
+                    }
+                  } >X</button>
                 </div>
                 {contNota.Notas.map(  (nota,index) => (
                   <div key={index} className='NotesContainer__note'>
