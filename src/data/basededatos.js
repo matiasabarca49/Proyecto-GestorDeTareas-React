@@ -64,9 +64,9 @@ const taskDataBase= [
 ]
 
 const notesDataBase =[
-    {name : "Servidores", Notas: [ {text: "Preguntar tiempo de entrega servidores CDN nuevos"} ]},
-    {name : "Rack", Notas: [ {text: "El servidor CDN de streaming está fallando, prueba de reinicio no funcionó"}, {text: "Se sacó el disco 4, esperando que lleguen los nuevos"} ]},
-    {name : "Raul", Notas: [ {text: "La VLAN Para usar en la conexion TarCo es la 8972"}, {text: "Hay un error en la potencia del enlace, revisar en el proximo intento"} ]}
+    {name : "Servidores", Notas: [ {id: 1, text: "Preguntar tiempo de entrega servidores CDN nuevos"} ]},
+    {name : "Rack", Notas: [ {id: 2, text: "El servidor CDN de streaming está fallando, prueba de reinicio no funcionó"}, {id: 3, text: "Se sacó el disco 4, esperando que lleguen los nuevos"} ]},
+    {name : "Raul", Notas: [ {id:4 ,text: "La VLAN Para usar en la conexion TarCo es la 8972"}, {id: 5, text: "Hay un error en la potencia del enlace, revisar en el proximo intento"} ]}
 ]
 
 //==============================================================================================================
@@ -94,7 +94,6 @@ export const deleteTask = (ID) => {
 
 export const addTaskToBase = (task) =>{
     taskDataBase.push(task)
-    console.log("Tarea agregada")
 }
 
 //Metodos para sección NOTAS
@@ -102,3 +101,22 @@ export const addTaskToBase = (task) =>{
 export const getNotesBase = new Promise((resolve, reject) => {
     notesDataBase ? resolve(notesDataBase) : reject("Error la base de datos se encuentra vacia")
 })
+
+export const addThemeToBase = ( newTheme ) =>{
+    notesDataBase.push( newTheme )
+}
+
+export const addNoteToBase = ( theme, newNota) =>{
+    const themeFound = notesDataBase.find(  nota => nota.name === theme )
+    newNota.id = Date.now()
+    themeFound.Notas.push(newNota)
+}
+
+export const deleteNoteFromBase = ( theme ,ID) => {
+    const themeToDelete = notesDataBase.find(  nota => nota.name === theme ) 
+    const noteFound = themeToDelete.Notas.find( nota => nota.id === parseFloat(ID)  )
+    themeToDelete.Notas.splice( themeToDelete.Notas.indexOf(noteFound), 1  )    
+} 
+
+
+

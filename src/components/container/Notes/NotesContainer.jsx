@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getNotesBase } from '../../../data/basededatos';
+import { getNotesBase, deleteNoteFromBase } from '../../../data/basededatos';
 import NewNote from './NewNote';
 import NewTheme from './NewTheme';
 
@@ -7,7 +7,7 @@ const NotesContainer = () => {
 
   const [notes, setNotes] = useState()
   const [charge,setCharge] = useState(false)
-  const [addNewNote, setAddNewNote] = useState(false)
+  const [renderNotes, setRenderNotes] = useState(false)
   const [addNewTheme, setAddNewTheme] = useState(false)
 
   useEffect(() => {
@@ -21,8 +21,7 @@ const NotesContainer = () => {
 
     }, [])
     
-    console.log(notes)
-    
+  
   return (
     <div className='NotesContainer'>
       <h1>Notas</h1>
@@ -32,19 +31,24 @@ const NotesContainer = () => {
           <div className='NotesContainer__contNotes'>
               {notes.map( (contNota,index) => (
               <div key={index} className=' NotesContainer__title'>
-                <h4>{contNota.name}</h4>
+                <div className='NotesContainer__theme'>
+                  <h4>{contNota.name}</h4>
+                  <button >X</button>
+                </div>
                 {contNota.Notas.map(  (nota,index) => (
                   <div key={index} className='NotesContainer__note'>
-                    <button>X</button>
+                    <button  onClick={ () => {
+                      deleteNoteFromBase( contNota.name, nota.id )
+                      setRenderNotes(!renderNotes)
+                      } }>X</button>
                     <p>{nota.text}</p>
                   </div>
                 ) )}
-                <button onClick={ () => setAddNewNote(!addNewNote) } ><img src="../img/addNote.png" alt="Agregar" style={{color:"#fff"}} /></button>
-                {addNewNote && <NewNote /> }
+                <NewNote note={ contNota } setRenderNotes={ setRenderNotes } renderNotes={ renderNotes }/>
               </div>
           ))}
           <button onClick={ ()=> setAddNewTheme( !addNewTheme ) }><img src="../img/addNoteTheme.png" alt="Agregar" /></button>
-          {addNewTheme && <NewTheme />}
+          {addNewTheme && <NewTheme setAddNewTheme={ setAddNewTheme } />}
           </div>
         : <h3>Cargando...</h3>
         }
