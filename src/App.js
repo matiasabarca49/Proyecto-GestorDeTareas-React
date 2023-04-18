@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ComponentTaskList from './components/container/ComponentTaskList';
+import ComponentTaskList from './components/container/Task/ComponentTaskList';
 import Navbar from './components/pure/Navbar';
 import Calendar from './components/container/Calendar/Calendar.jsx';
-import TaskContDetail from './components/container/TaskContDetail';
+import TaskContDetail from './components/container/Task/TaskContDetail';
 import NotesContainer from './components/container/Notes/NotesContainer.jsx';
 
 function App() {

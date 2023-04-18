@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { getTaskBase } from '../../data/basededatos';
-import ComponentTask from '../pure/ComponentTask'
-import NewTaskModal from '../pure/NewTaskModal';
-
+import { getTaskBase } from '../../../data/basededatos';
+import ComponentTask from '../../pure/Task/ComponentTask';
+import NewTaskModal from './NewTaskModal';
 
 const ComponentTaskList = () => {
 

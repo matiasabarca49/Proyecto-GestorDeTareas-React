@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import TaskInfo from '../pure/TaskInfo'
-import TaskTitle from '../pure/TaskTitle'
-import TaskNotes from '../pure/TaskNotes'
-import { deleteTask } from '../../data/basededatos'
+import TaskInfo from '../../pure/Task/TaskInfo'
+import TaskTitle from '../../pure/Task/TaskTitle'
+import TaskNotes from '../../pure/Task/TaskNotes'
+import { deleteTask, updateTaskInBase } from '../../../data/basededatos'
 
 const TaskDetail = ( { task }) => {
 
@@ -14,12 +14,12 @@ const TaskDetail = ( { task }) => {
     const handleCheckedTask = () =>{
         task.completed = !checked
         setChecked(!checked)
+        updateTaskInBase()
     }  
 
     const handleDeleteTask = ( ID ) =>{
         deleteTask(ID)
         setIsDelete(true)
-
     }
 
     

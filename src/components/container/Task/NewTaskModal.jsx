@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Task } from '../../models/task.class'
-import { LEVELS } from '../../models/levels.enum'
-import { addTaskToBase } from '../../data/basededatos'
+import { Task } from '../../../models/task.class'
+import { LEVELS } from '../../../models/levels.enum'
+import { addTaskToBase } from '../../../data/basededatos'
 
 const NewTaskModal = ( {setTasks, tasks, setAddTask } ) => {
 
