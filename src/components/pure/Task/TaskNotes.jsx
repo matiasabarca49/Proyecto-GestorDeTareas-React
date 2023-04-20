@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { updateTaskInBase } from '../../../data/basededatos'
 
 const TaskNotes = ( { task } ) => {
 
@@ -12,6 +13,7 @@ const TaskNotes = ( { task } ) => {
     const notaEncontrada = task.notes.find( note => note.id === ID  )    
     const indice = task.notes.indexOf(notaEncontrada)   
     task.notes.splice(indice,1)
+    updateTaskInBase()
     setCharge(!charge)
   }
 
@@ -25,6 +27,7 @@ const TaskNotes = ( { task } ) => {
       }
 
       task.notes.push( makeNote )
+      updateTaskInBase()
       setNewNote(false)
       
   }
@@ -57,7 +60,7 @@ const TaskNotes = ( { task } ) => {
                       <p className='TaskCommentary__content__date'>Anotado el {note.noteDate.split(",")[0]} a las {note.noteDate.split(",")[1] }</p>
                     </div>
                       <p className='TaskCommentary__content__user'>{note.noteUser}</p>
-                      <button onClick={ () => deleteNote(note.id) }>Eliminar</button>
+                      <button style={{cursor: "pointer"}}onClick={ () => deleteNote(note.id) }>X</button>
                   </div>
                 ))
               : <p>Sin comentarios</p>

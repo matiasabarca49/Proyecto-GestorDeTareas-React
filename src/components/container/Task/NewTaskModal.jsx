@@ -21,7 +21,7 @@ const NewTaskModal = ( {setTasks, tasks, setAddTask } ) => {
   return (
     <div className='newTaskModelCont'>
         <form className='newTaskModelCont__form' onSubmit={  (e) => e.preventDefault()  }>
-            <button onClick={ () => setAddTask(false) } className='btn btnClose'>Cerrar</button>
+            <button onClick={ () => setAddTask(false) } className='btn btnClose'>x</button>
             <div className='newTaskModelCont__form__info'>
                 <div>
                     <label htmlFor="taskName">Nombre de la tarea:</label>
@@ -40,7 +40,7 @@ const NewTaskModal = ( {setTasks, tasks, setAddTask } ) => {
                     </select>
                 </div>
             </div>
-            <button onClick={ addNewTask } className='btn btnPrimary'>Agregar</button>
+            <button onClick={ addNewTask } className='btn btnAdd'>Agregar</button>
         </form>
     </div>
   )

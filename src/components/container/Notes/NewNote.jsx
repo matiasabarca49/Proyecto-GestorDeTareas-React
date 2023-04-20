@@ -17,14 +17,15 @@ const NewNote = ( { note, renderNotes, setRenderNotes } ) => {
   }
 
   return (
-    <div>
+    <div className='newNote'>
       <button onClick={ () => setAddNewNote(!addNewNote) }> <img src="../img/addNote.png" alt="Agregar" style={{color:"#fff"}} /> </button>
       {addNewNote &&  
-            <form action="" onSubmit={ (e) => e.preventDefault()   }>
-                <label htmlFor=""> Nota </label>
-                <input type="text" onChange={ (e) =>  setText(e.target.value)} value={ text }/>
-                <button  onClick={ handleNewNote } > Agregar </button>
-            </form>      
+      <form className='newNote__form' action="" onSubmit={ (e) => e.preventDefault()   }>
+          <label htmlFor=""> Nota: </label>
+          <input type="text" onChange={ (e) =>  setText(e.target.value)} value={ text }/>
+          <button  onClick={ handleNewNote } > 
+          + </button>
+      </form>      
       }
     </div>
   )

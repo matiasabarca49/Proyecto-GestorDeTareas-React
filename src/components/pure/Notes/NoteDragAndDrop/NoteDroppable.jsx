@@ -23,7 +23,7 @@ const NoteDroppable = ({index, contNota, renderNotes,setRenderNotes}) => {
                 </div>
                 <div>
                     {contNota.Notas.map(  (nota,index) => 
-                    <NoteDraggable contNota={contNota} nota={nota} index={index} setRenderNotes={setRenderNotes}/>
+                    <NoteDraggable contNota={contNota} nota={nota} index={index} renderNotes={renderNotes} setRenderNotes={setRenderNotes}/>
                     )}
                     {droppableProvided.placeholder}
                 </div>

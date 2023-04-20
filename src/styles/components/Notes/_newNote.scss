@@ -1,0 +1,22 @@
+.newNote{
+    &__form{
+        label{
+            margin: 0.5rem 0;
+            display: block;
+        }
+        input{
+            background-color: #eae583;
+            border: none;
+            border-radius: 10px;
+            padding: 2rem 1rem;
+        }
+        button{
+            background-color: #43b05c;
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+        }
+
+    }
+}

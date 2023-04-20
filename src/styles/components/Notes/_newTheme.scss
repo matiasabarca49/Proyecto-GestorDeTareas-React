@@ -5,4 +5,48 @@
     width: 100vw;
     height: 100vh;
     background-image: linear-gradient(rgba(5, 7, 12,0.90),rgba(5, 7, 12, 0.90));
+    form{
+        width: 500px;
+        background-color: #25282a;
+        padding: 2rem 1rem;
+        margin: 100px auto;
+        border-radius: 5px;
+        position: relative;
+        .newTheme__theme{
+            display: flex;
+            flex-direction: column;
+            input{
+                padding: 0.5rem;
+                margin:0.5rem 0;
+                border: none;
+            }
+        }
+        .newTheme__btnClose{
+            position: absolute;
+            top: 0;
+            right: 10px;
+            color: #ff0000;
+        }
+        .newTheme__btnAddNote{
+            color: #3391ff;
+        }
+        .newTheme__btnAddTheme{
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #43b05c;
+            cursor: pointer;
+            &:hover{
+                transform: scale(110%);
+            }
+        }
+        button{
+            display: block;
+            margin: 1rem 0;
+            &:hover{
+                transform: scale(110%);
+                cursor: pointer;
+            }
+        }
+    }
 }

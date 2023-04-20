@@ -26,17 +26,19 @@ const NewTheme = ( {setAddNewTheme } ) => {
   return (
     <div className='NewTheme'>
             <form action="" onSubmit={  (e )=> e.preventDefault()  } >
-                <button style={{color:"#fff"}} onClick={ () => setAddNewTheme(false) }>X</button>
-                <label htmlFor="">Nombre del tema</label>
-                <input type="text"  onChange={ (e) => setTheme(e.target.value) } value={ theme } required />
-                <button onClick={ ()=> setAddNote(!addNote) }>Agregar Nota</button>
+                <button className='newTheme__btnClose' onClick={ () => setAddNewTheme(false) }>X</button>
+                <div className='newTheme__theme'>
+                  <label htmlFor="">Nombre del tema:</label>
+                  <input type="text"  onChange={ (e) => setTheme(e.target.value) } value={ theme } required />
+                </div>
+                <button className='newTheme__btnAddNote' onClick={ ()=> setAddNote(!addNote) }> + Agregar Nota</button>
                 {addNote && 
-                    <div>
-                        <textarea name="" id="" cols="30" rows="10" onChange={ (e) => setText(e.target.value) } value={ text }/>
-                    </div>
+                <div>
+                    <textarea name="" id="" cols="30" rows="10" onChange={ (e) => setText(e.target.value) } value={ text }/>
+                </div>
                 
                 }
-                <input type="submit" value='Agregar' onClick={ handleAddTheme } />
+                <input className='newTheme__btnAddTheme' type="submit" value='Agregar' onClick={ handleAddTheme } />
             </form>
     </div>
   )
