@@ -1,6 +1,11 @@
 .NotesContainer{
+    h1{
+        font-weight: 400;
+        margin-bottom: 2rem;
+    }
     &__contNotes{
         display: flex;
+        flex-wrap: wrap;
         gap: 1rem;
         button{
             align-self: flex-start;
@@ -20,7 +25,6 @@
 
     }
     &__theme{
-
         display: flex;
         justify-content: space-between;
         background-color: #2a2e2f;
@@ -29,6 +33,7 @@
         h4{
             margin: 0;
             padding: 0.7rem;
+            font-weight: 500;
         }
         button{
             align-self: center;

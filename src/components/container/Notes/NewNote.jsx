@@ -22,7 +22,7 @@ const NewNote = ( { note, renderNotes, setRenderNotes } ) => {
       {addNewNote &&  
       <form className='newNote__form' action="" onSubmit={ (e) => e.preventDefault()   }>
           <label htmlFor=""> Nota: </label>
-          <input type="text" onChange={ (e) =>  setText(e.target.value)} value={ text }/>
+          <textarea type="text" onChange={ (e) =>  setText(e.target.value)} value={ text }/>
           <button  onClick={ handleNewNote } > 
           + </button>
       </form>      

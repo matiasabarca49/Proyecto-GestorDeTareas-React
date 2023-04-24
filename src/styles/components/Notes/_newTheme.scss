@@ -40,6 +40,14 @@
                 transform: scale(110%);
             }
         }
+        .newTheme__note{
+            textarea{
+                background-color: #eae583;
+                border-radius: 10px;
+                padding: 1rem;
+                resize: none;
+            }
+        }
         button{
             display: block;
             margin: 1rem 0;

@@ -51,7 +51,7 @@ const NotesContainer = () => {
  
   return (
     <div className='NotesContainer'>
-      <h1>Notas</h1>
+      <h1>Notas:</h1>
 
         {charge
         

@@ -2,8 +2,11 @@
 @import './globals/settings';
 @import './globals/globals';
 
-// Importación de componentes
-@import './components/navbar';
+// Importación de Navbar
+@import './components/Navbar/navbar';
+@import './components/Navbar/clock';
+
+// Importacion de componenetes Tasks
 @import './components/componentTaskList';
 @import './components/componentTask';
 @import './components/newTaskModel'; 

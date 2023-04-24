@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ComponentTaskList from './components/container/Task/ComponentTaskList';
-import Navbar from './components/pure/Navbar';
+import Navbar from './components/pure/Navbar/Navbar';
 import Calendar from './components/container/Calendar/Calendar.jsx';
 import TaskContDetail from './components/container/Task/TaskContDetail';
 import NotesContainer from './components/container/Notes/NotesContainer.jsx';

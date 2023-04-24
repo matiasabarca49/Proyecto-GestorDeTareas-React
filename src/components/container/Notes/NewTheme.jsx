@@ -33,7 +33,7 @@ const NewTheme = ( {setAddNewTheme } ) => {
                 </div>
                 <button className='newTheme__btnAddNote' onClick={ ()=> setAddNote(!addNote) }> + Agregar Nota</button>
                 {addNote && 
-                <div>
+                <div className='newTheme__note'>
                     <textarea name="" id="" cols="30" rows="10" onChange={ (e) => setText(e.target.value) } value={ text }/>
                 </div>
                 
