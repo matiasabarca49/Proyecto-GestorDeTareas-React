@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { getTaskBase } from '../../../data/basededatos';
 import ComponentTask from '../../pure/Task/ComponentTask';
 import NewTaskModal from './NewTaskModal';
+import { DragDropContext, Droppable } from '@hello-pangea/dnd';
 
 const ComponentTaskList = () => {
 
@@ -17,6 +18,23 @@ const ComponentTaskList = () => {
         setCarga(true)
     
     }, [])
+
+    const taskMove = (res) =>{
+        console.log(res)
+        const {source, destination} = res
+        if (!destination){
+            return
+        }
+        else if (destination.index === source.index ){
+            return
+        }
+        else{
+            const removed = tasks[destination.index]
+            tasks.splice( destination.index, 1, tasks[source.index])
+            tasks.splice( source.index, 1, removed)
+
+        }
+    }
  
     return (
         <div className='componentTaskListCont'>
@@ -33,12 +51,24 @@ const ComponentTaskList = () => {
                     <h4>Estado</h4>
                     <h4>Link</h4>
                 </div>
-                {carga
-                    ?tasks.map( tarea  => (
-                        <ComponentTask key={tarea.id} task={tarea} />
-                        ))
-                        : <h2>Cargando....</h2>
-                    }
+                <DragDropContext  onDragEnd={ res => taskMove(res) }>
+                    <Droppable droppableId="ColumnTaskID">
+                        {(droppableProvided, snapshot) =>(
+                            <div {...droppableProvided.droppableProps}
+                            ref={droppableProvided.innerRef}>
+
+                                {carga
+                                    ?tasks.map( (tarea, index ) => (
+                                        <ComponentTask key={tarea.id} task={tarea} index={index}/>
+                                        ))
+                                        : <h2>Cargando....</h2>
+                                }
+                            {droppableProvided.placeholder}
+                            </div>
+                        )
+                        }
+                    </Droppable>
+                </DragDropContext>
             </div>
         </div>
   )
