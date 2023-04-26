@@ -1,4 +1,5 @@
 .componentTask{
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -6,6 +7,13 @@
     margin-bottom: 1rem;
     border-radius: 15px;
     padding: 0.5rem 2.5rem;
+    .moveTask{
+        position: absolute;
+        left: 15px;
+        img{
+            width: 20px;
+        }
+    }
     .taskName{
         width: 28%;
         font-size: $titleTaskSize;
@@ -20,5 +28,30 @@
         span{
             display: block;
         }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .componentTask{
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        .moveTask{
+            left: 10px;
+            img{
+                width: 30px;
+            }
+        }
+        .taskName{
+            width: 100%;
+        }
+        a{
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 567px) {
+    .componentTask{
+        justify-content: space-between;
     }
 }

@@ -18,3 +18,12 @@
 
     }
 }
+
+@media screen and (max-width: 991px) {
+
+    .clock{
+        display: none;
+        visibility: hidden;
+    }
+    
+}

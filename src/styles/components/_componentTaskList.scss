@@ -46,3 +46,20 @@
         }
     }
 }
+
+@media screen and (max-width: 991px) {
+
+    div.componentTaskListCont{
+
+        &__encabezado{
+         display: none;
+         visibility: hidden;   
+        }
+        .componentTaskListCont__taskList{
+            margin: 1rem 0.5rem;
+        }
+        
+        
+    }
+    
+}

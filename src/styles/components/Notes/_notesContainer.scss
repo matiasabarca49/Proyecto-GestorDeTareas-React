@@ -1,8 +1,27 @@
 .NotesContainer{
-    h1{
-        font-weight: 400;
-        margin-bottom: 2rem;
+    &__titleAndNewTask{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        h1{
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+        .btnAddNewTheme{
+            background-color: transparent;
+            border: none;
+            margin-left: 10px;
+            cursor: pointer;
+            &:hover{
+                transform: scale(110%);
+            }
+            img{
+                width: 40px;
+            }
+        }
     }
+    
     &__contNotes{
         display: flex;
         flex-wrap: wrap;
@@ -21,7 +40,8 @@
         }
     }
     &__title{
-        width: 200px;
+        max-width: 200px;
+        flex-grow: 1;
 
     }
     &__theme{
@@ -54,4 +74,14 @@
             right: 5px;
         }
     }
+}
+
+@media screen and (max-width: 991px) {
+    .NotesContainer{
+        &__title{
+            width: 170px;
+            flex-grow: 1;
+        }
+    }
+    
 }

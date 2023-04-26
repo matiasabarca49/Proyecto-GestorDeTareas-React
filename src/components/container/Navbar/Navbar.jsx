@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import Clock from '../../container/Navbar/Clock'
+import Clock from './Clock'
 
 const Navbar = () => {
+
+  const [showMenu, setShowMenu] = useState(false)
+  
   return (
     <>
+    <img className='btnMenu' src="./img/menu.png" alt="Menu" onClick={ () => setShowMenu(!showMenu)}/>
+    <div className={showMenu? 'navbar': 'navbar navbar--desactivated' }>
       <h1>Menú</h1>
       <div className='navbar__Links'>
         <NavLink to='/' className='pending' activeclassname='active'> Tareas </NavLink>
@@ -12,6 +17,7 @@ const Navbar = () => {
         <NavLink to='/Calendar' className='pending' activeclassname='active' > Calendario </NavLink>
       </div>
       <Clock />
+    </div>
     </>
   )
 }

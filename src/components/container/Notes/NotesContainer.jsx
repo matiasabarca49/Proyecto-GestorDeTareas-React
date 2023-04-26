@@ -51,7 +51,12 @@ const NotesContainer = () => {
  
   return (
     <div className='NotesContainer'>
-      <h1>Notas:</h1>
+      <div className='NotesContainer__titleAndNewTask'>
+        <h1>Notas:</h1>
+        <button className='btnAddNewTheme' onClick={ () => setAddNewTheme( !addNewTheme ) }>
+          <img src="../img/addNoteTheme.png" alt="Agregar" />
+        </button>
+      </div>
 
         {charge
         
@@ -63,9 +68,9 @@ const NotesContainer = () => {
                 setRenderNotes={setRenderNotes} 
                 moveNotes={ moveNotes } />
 
-              <button onClick={ () => setAddNewTheme( !addNewTheme ) }>
+              {/* <button onClick={ () => setAddNewTheme( !addNewTheme ) }>
                 <img src="../img/addNoteTheme.png" alt="Agregar" />
-              </button>
+              </button> */}
 
               {addNewTheme && <NewTheme setAddNewTheme={ setAddNewTheme } />}
 

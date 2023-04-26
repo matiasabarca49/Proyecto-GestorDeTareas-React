@@ -32,3 +32,17 @@
         }
     }
 }
+
+
+@media screen and (max-width: 991px) {
+    .navbar{
+        position: absolute;
+        width: 90vw;
+        z-index: 900;
+        
+    }
+    .navbar--desactivated{
+        margin-top: -1000px;
+    }
+    
+}

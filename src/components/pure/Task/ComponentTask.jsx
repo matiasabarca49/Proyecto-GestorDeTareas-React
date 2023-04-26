@@ -15,7 +15,9 @@ const ComponentTask = ( {task, index} ) => {
           ref={draggableProvided.innerRef}
           /* {...draggableProvided.dragHandleProps} */
           className='componentTask'>
-            <div {...draggableProvided.dragHandleProps}>Mover</div>
+            <div className='moveTask' {...draggableProvided.dragHandleProps}>
+              <img src="./img/moveUpAndDown2.png" alt="move" />
+            </div>
             <h2 className='taskName'>{task.name}</h2>
             <h4 className='taskLevel' style={  
               task.level === "Medio"

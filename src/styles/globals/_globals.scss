@@ -1,6 +1,11 @@
 .appContainer{
     display: flex;
     // height: 100vh;
+    .btnMenu{
+        display: none;
+        visibility: hidden;
+        filter: invert(100%);
+    }
 }
 
 .contentContainer{
@@ -25,4 +30,23 @@
 .btnPrimary{
     background-color: #181a1b;
     color: #3391ff;
+}
+
+@media screen and (max-width: 991px) {
+    .appContainer{
+        flex-direction: column;
+        .btnMenu{
+            position: absolute;
+            display: block;
+            visibility: visible;
+            width: 40px;
+            z-index: 999;
+        }
+    }
+    .contentContainer{
+        width: 100vw;
+        padding: 4rem 0;
+    
+    }
+    
 }
