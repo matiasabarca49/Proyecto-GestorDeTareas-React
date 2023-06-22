@@ -1,6 +1,6 @@
 # Repositorio del Gestor de Tareas/Task Manager
 
-La app permite llevar un control y seguimiento de tareas, control de "NOTAS" y proximamente "Calendario".
+La app permite llevar un control y seguimiento de tareas como tambien control de "NOTAS". 
 
 ## Instalación y puesta en marcha
 ###### Requisitos para la instalación:

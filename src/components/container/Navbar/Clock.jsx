@@ -25,7 +25,7 @@ const Clock = () => {
       <h6>{`${days[date.getDay()]}
             ${date.getDate() < 10
             ? `0${date.getDate()}`
-            : date.getDate()}/${date.getMonth() + 1 < 10 
+            : date.getDate()}/${(date.getMonth() + 1) < 10 
                                       ? `0${date.getMonth() + 1}`   
                                       : date.getMonth() + 1}`}
       </h6>
